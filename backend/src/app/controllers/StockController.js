@@ -3,6 +3,15 @@ import * as Yup from 'yup';
 import Stock from '../models/Stock';
 
 class StockController {
+  async index(req, res) {
+    const stocks = await Stock.findAll({
+      order: ['product_id'],
+      attributes: ['id', 'product_id', 'amount'],
+    });
+
+    return res.json(stocks);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       amount: Yup.number().required(),
