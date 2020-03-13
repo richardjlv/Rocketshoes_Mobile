@@ -59,7 +59,7 @@ export default function Home() {
         keyExtractor={item => String(item.id)}
         renderItem={({ item }) => (
           <ProductItem key={item.id}>
-            <ProductImage source={{ uri: item.image }} />
+            <ProductImage source={{ uri: item.image.url }} />
             <Title>{item.title}</Title>
             <Price>{item.priceFormatted}</Price>
 
