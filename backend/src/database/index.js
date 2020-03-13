@@ -2,9 +2,10 @@ import Sequelize from 'sequelize';
 
 import File from '../app/models/File';
 import Product from '../app/models/Product';
+import Stock from '../app/models/Stock';
 import databaseConfig from '../config/database';
 
-const models = [File, Product];
+const models = [File, Product, Stock];
 
 class Database {
   constructor() {
