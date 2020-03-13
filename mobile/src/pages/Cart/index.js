@@ -27,6 +27,8 @@ import {
   EmptySubText,
 } from './styles';
 
+Icon.loadFont();
+
 export default function Cart() {
   const products = useSelector(state =>
     state.cart.map(product => ({
@@ -97,14 +99,14 @@ export default function Cart() {
           </TotalContainer>
         </>
       ) : (
-          <EmptyContainer>
-            <Icon name="remove-shopping-cart" size={100} color="#999" />
-            <EmptyText>O carrinho está vazio!</EmptyText>
-            <EmptySubText>
-              Explore os produtos da loja e adicione os produtos que desejar
+        <EmptyContainer>
+          <Icon name="remove-shopping-cart" size={100} color="#999" />
+          <EmptyText>O carrinho está vazio!</EmptyText>
+          <EmptySubText>
+            Explore os produtos da loja e adicione os produtos que desejar
           </EmptySubText>
-          </EmptyContainer>
-        )}
+        </EmptyContainer>
+      )}
     </Container>
   );
 }

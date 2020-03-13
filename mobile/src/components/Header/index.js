@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { Container, Logo, LogoImage, Cart, CartAmount } from './styles';
 
+Icon.loadFont();
+
 export function Header({ navigation }) {
   const { navigate } = navigation;
 

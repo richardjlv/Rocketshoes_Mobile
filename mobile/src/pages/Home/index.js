@@ -18,6 +18,8 @@ import {
   ProductAmountItems,
 } from './styles';
 
+Icon.loadFont();
+
 export default function Home() {
   const [products, setProducts] = useState([]);
 
