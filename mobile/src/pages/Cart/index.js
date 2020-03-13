@@ -62,7 +62,7 @@ export default function Cart() {
           {products.map(product => (
             <Product key={String(product.id)}>
               <ProductItem>
-                <ProductImage source={{ uri: product.image }} />
+                <ProductImage source={{ uri: product.image.url }} />
                 <ProductDetails>
                   <ProductTitle>{product.title}</ProductTitle>
                   <ProductPrice>{formatPrice(product.price)}</ProductPrice>
@@ -99,14 +99,14 @@ export default function Cart() {
           </TotalContainer>
         </>
       ) : (
-        <EmptyContainer>
-          <Icon name="remove-shopping-cart" size={100} color="#999" />
-          <EmptyText>O carrinho está vazio!</EmptyText>
-          <EmptySubText>
-            Explore os produtos da loja e adicione os produtos que desejar
+          <EmptyContainer>
+            <Icon name="remove-shopping-cart" size={100} color="#999" />
+            <EmptyText>O carrinho está vazio!</EmptyText>
+            <EmptySubText>
+              Explore os produtos da loja e adicione os produtos que desejar
           </EmptySubText>
-        </EmptyContainer>
-      )}
+          </EmptyContainer>
+        )}
     </Container>
   );
 }
