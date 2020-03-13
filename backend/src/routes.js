@@ -13,6 +13,7 @@ routes.get('/products', ProductController.index);
 routes.post('/products', ProductController.store);
 
 routes.post('/stock', StockController.store);
+routes.put('/stock/:product_id', StockController.update);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
