@@ -14,6 +14,7 @@ routes.post('/products', ProductController.store);
 
 routes.post('/stock', StockController.store);
 routes.put('/stock/:product_id', StockController.update);
+routes.delete('/stock/:product_id', StockController.delete);
 
 routes.post('/files', upload.single('file'), FileController.store);
 

@@ -46,6 +46,24 @@ class StockController {
 
     return res.json({ product_id, amount });
   }
+
+  async delete(req, res) {
+    const { product_id } = req.params;
+
+    const stock = await Stock.findOne({
+      where: {
+        product_id,
+      },
+    });
+
+    if (!stock) {
+      return res.status(400).json({ error: 'Stock not found' });
+    }
+
+    await stock.destroy();
+
+    return res.json({ message: 'Stock has delete' });
+  }
 }
 
 export default new StockController();
