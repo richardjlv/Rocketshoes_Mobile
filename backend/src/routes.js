@@ -11,6 +11,7 @@ const upload = multer(multerConfig);
 
 routes.get('/products', ProductController.index);
 routes.post('/products', ProductController.store);
+routes.delete('/products/:id', ProductController.delete);
 
 routes.post('/stock', StockController.store);
 routes.put('/stock/:product_id', StockController.update);
