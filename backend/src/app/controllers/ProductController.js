@@ -5,6 +5,26 @@ import Product from '../models/Product';
 
 class ProductController {
   async index(req, res) {
+    const { id } = req.params;
+
+    if (id) {
+      const products = await Product.findOne({
+        where: {
+          id,
+        },
+        attributes: ['id', 'title', 'price'],
+        include: [
+          {
+            model: File,
+            as: 'image',
+            attributes: ['id', 'path', 'url'],
+          },
+        ],
+      });
+
+      return res.json(products);
+    }
+
     const products = await Product.findAll({
       order: ['price'],
       attributes: ['id', 'title', 'price'],

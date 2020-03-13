@@ -4,9 +4,12 @@ import Stock from '../models/Stock';
 
 class StockController {
   async index(req, res) {
-    const stocks = await Stock.findAll({
-      order: ['product_id'],
-      attributes: ['id', 'product_id', 'amount'],
+    const { product_id } = req.params;
+
+    const stocks = await Stock.findOne({
+      where: {
+        product_id,
+      },
     });
 
     return res.json(stocks);
