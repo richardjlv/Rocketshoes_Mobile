@@ -1,10 +1,23 @@
 import * as Yup from 'yup';
 
+import File from '../models/File';
 import Product from '../models/Product';
 
 class ProductController {
   async index(req, res) {
-    return res.json();
+    const products = await Product.findAll({
+      order: ['price'],
+      attributes: ['id', 'title', 'price'],
+      include: [
+        {
+          model: File,
+          as: 'image',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
+    });
+
+    return res.json(products);
   }
 
   async store(req, res) {
