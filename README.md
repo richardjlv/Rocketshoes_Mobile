@@ -2,6 +2,11 @@
 
 Rocketshoes mobile é um projeto de e-commerce criado durante o desafio do Bootcamp GoStack 8.0 da Rocketseat. Nesta aplicação temos uma página para listar os produtos e outra página que lista os produtos do carrinho de compras
 
+![Home](.github/homepage.png)
+![Cart](.github/cartpage.png)
+
+## A Aplicação
+
 Foi implementado o front-end e backend da aplicação
 
 Está disponibilizada uma fake REST API para a aplicação criada utilizando JSON Server, caso deseje testar a aplicação sem precisar cadastrar produtos.
@@ -25,6 +30,7 @@ Está disponibilizada uma fake REST API para a aplicação criada utilizando JSO
 - React Navigation
 - React Hooks
 - Redux
+- Sagas
 
 ## Funcionalidades do Backend
 
