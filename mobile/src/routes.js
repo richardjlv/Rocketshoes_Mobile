@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 function HeaderScreen(navigation) {
   return (
-    <SafeAreaView style={{ height: 60 }}>
+    <SafeAreaView style={{ height: 60, background: darken(0.03, '#191920') }}>
       <Header {...navigation} />
     </SafeAreaView>
   );
