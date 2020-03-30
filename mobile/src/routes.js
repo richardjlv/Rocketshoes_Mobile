@@ -1,4 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import { darken } from 'polished';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
